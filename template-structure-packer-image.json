@@ -1,0 +1,58 @@
+{
+    "variables": {
+    // list of variables
+        "access_key": "{{env 'ACCESS_KEY'}}", //The access_key variable with the ACCESS_KEY environment variable
+        "image_folder": "/image",
+        "vm_size": "Standard_DS2_v2"
+    },
+    //To use these so-called user variables, we use the {{user 'variablename' }}
+    "builders": [
+    {
+        "type": "azure-rm",
+        "client_id": "xxxxxxxx",
+        "client_secret": "xxxxxxxx",
+        "subscription_id": "xxxxxxxxxx",
+        "tenant_id": "xxxxxx",
+        "os_type": "Linux",
+        "image_publisher": "Canonical",
+        "image_offer": "UbuntuServer",
+        "location": "westus",
+        //exemple variable used
+        "type": "azure-arm",
+        "access_key": "{{user 'access_key'}}",
+        "vm_size": "{{user 'vm_size'}}",
+    }
+    ],
+    "provisioners": [
+    {
+        "type": "shell",
+        "script": "hardening-config.sh"
+    },
+    {
+        "type": "file",
+        "source": "scripts/installers",
+        "destination": "/tmp/scripts"
+    },
+    //only on linux to generalize image 
+    {
+        "type": "shell",
+        "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'",
+        "inline": ["/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"]
+    },
+    //only on windows use sysprep tool to generalaize image:
+    {
+        "type": "powershell",
+        "inline": ["& C:\\windows\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /shutdown /quiet"]
+    },
+    //exemple using variable in provisioner section:
+    {
+         "type": "shell",
+         "inline": [
+         "mkdir {{user 'image_folder'}}",
+         "chmod 777 {{user 'image_folder'}}"
+         ],
+         "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
+         }
+    ]
+   
+}
