@@ -2,9 +2,11 @@ parameters:
   - name: TENANT_ID
     displayName: "insert tenant id"
     type: string
+    default: ''
   - name: SP_NAME
     displayName: "insert sp name"
     type: string
+    default: ''
 
 trigger: none
 
@@ -31,4 +33,4 @@ stages:
         scriptType: 'bash'
         scriptLocation: 'scriptPath'
         scriptPath: 'Azure/create-sp-azure.sh'
-        arguments: '$tenant_id $sp_name'
+        arguments: '$(tenant_id) $(sp_name)'
