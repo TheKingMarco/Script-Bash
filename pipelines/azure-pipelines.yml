@@ -34,3 +34,9 @@ stages:
         scriptLocation: 'scriptPath'
         scriptPath: 'Azure/create-sp-azure.sh'
         arguments: '$(tenant_id) $(sp_name)'
+    
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/SP_$(sp_name).encrypted'
+        ArtifactName: 'sp_credentials'
+        publishLocation: 'Container'
