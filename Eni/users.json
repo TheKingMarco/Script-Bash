@@ -1,0 +1,82 @@
+[
+    {
+        "user": "EXT001",
+        "group": "Devs",
+        "action": "add"
+    },
+    {
+        "user": "EXT001",
+        "group": "Senior Devs",
+        "action": "add"
+    },
+    {
+        "user": "EXT001",
+        "group": "Architects",
+        "action": "add"
+    },
+    {
+        "user": "EXT001",
+        "group": "Product Owners",
+        "action": "add"
+    },
+    {
+        "user": "EXT001",
+        "group": "Security",
+        "action": "add"
+    },
+    {
+        "user": "EXT002",
+        "group": "Senior Devs",
+        "action": "add"
+    },
+    {
+        "user": "EXT002",
+        "group": "Devs",
+        "action": "add"
+    },
+    {
+        "user": "EXT003",
+        "group": "Devs",
+        "action": "add"
+    },
+    {
+        "user": "EXT003",
+        "group": "Senior Devs",
+        "action": "add"
+    },
+    {
+        "user": "EXT003",
+        "group": "Architects",
+        "action": "add"
+    },
+    {
+        "user": "EXT003",
+        "group": "Product Owners",
+        "action": "add"
+    },
+    {
+        "user": "EXT003",
+        "group": "Security",
+        "action": "add"
+    },
+    {
+        "user": "EXT003",
+        "group": "Senior Devs",
+        "action": "remove"
+    },
+    {
+        "user": "EXT003",
+        "group": "Architects",
+        "action": "remove"
+    },
+    {
+        "user": "EXT003",
+        "group": "Product Owners",
+        "action": "remove"
+    },
+    {
+        "user": "EXT003",
+        "group": "Security",
+        "action": "remove"
+    }
+]
