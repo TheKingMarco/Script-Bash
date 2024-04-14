@@ -56,7 +56,7 @@ DATE=$(date +'%d/%m/%Y %H:%M')
 # To use on new version of script , only if we can create a SP on azure that have the permission on EntraID to get all the information of the users from azure using microsoft graph api.
 # tenant_id="c16e514b-893e-4a01-9a30-b8fef514a650"
 # client_id="06cf5060-a7eb-40b2-88ea-9d9eb475e9a0"
-# client_secret="GLJ8Q~FZMoXgdcOT_5NequQvh2p8fm3t5EH7Udgx"
+# client_secret="<secrets>"
 
 
 # Color codes
